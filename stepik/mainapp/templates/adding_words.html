@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+
+{% block title %}Adding{% endblock %}
+
+{% block header %} <a href="/"> back </a>  {% endblock %}
+{% block content %}
+<H2>You would like to append some words in the dict?</H2>
+
+<div class="new_word">
+    <h2>Добавляйте</h2>
+    <form method="POST" action="">
+        <label for="original">Слово</label>
+        <input type="text" name="word1" required><br>
+        <label for="translate">Перевод</label>
+        <input type="text" name="word2" required><br>
+        <input type="submit" value="Добавить">
+        {% csrf_token %}
+    </form>
+</div>
+
+{% endblock %}

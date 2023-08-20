@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>{% block title %} base {% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1 style="font-style: italic"> Переводчик нового поколения уже с вами!!! </h1>
+        {% block header %} Вы на главной странице {% endblock %}
+    </header>
+    <div id="content">
+        {% block content %} Default Content {% endblock %}
+    </div>
+</body>
+</html>

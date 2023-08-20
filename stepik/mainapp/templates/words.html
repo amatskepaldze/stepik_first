@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+{% block title %}Words list{% endblock %}
+{% block header %} <a href="/"> back </a>  {% endblock %}
+
+{% block content %}
+<H2>What we should know:</H2>
+<div class="words_list">
+    <table class="words_list">
+        <tr>
+            <th>Original</th>
+            <th>Перевод</th>
+        </tr>
+        {% for word1, word2 in dictionary.items %}
+        <tr>
+            <td>{{word1}}</td>
+            <td>{{word2}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
