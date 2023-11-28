@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+{% block title %}Editing{% endblock %}
+
+{% block header %} <a href="/"> back </a>  {% endblock %}
+{% block content %}
+    <H2>You may correct word <u>{{ word.original }}</u> and it's translation</H2>
+<div class="edit">
+    <h3>Измените что-либо</h3>
+    <form method="post" action="">
+        <label for="original">Слово</label>
+        <input type="text" name="original" value={{ word.original }}><br>
+        <label for="translate">Перевод</label>
+        <input type="text" name="translate" value={{ word.translate }}><br>
+        <label for="comment">Комментарий</label>
+        <textarea name = "comment"></textarea>
+        <input type="submit" value="Изменить">
+        {% csrf_token %}
+    </form>
+</div>
+
+{% endblock %}

@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from mainapp.views import *
-
+# from ..mainapp.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', home, name="home"),
-    path('add_word/', adding_words),
-    path('words_list/', words_list),
+    path('add_word/', adding_words_db),
+    path('words_list/', words_list_db),
+    path('edit/<slug:word_id>', edit_words_db, name='editing'),
     path('', home)
 ]

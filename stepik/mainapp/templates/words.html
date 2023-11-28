@@ -11,11 +11,17 @@
         <tr>
             <th>Original</th>
             <th>Перевод</th>
+            <th>Комментарий</th>
+            <th>Узнать больше</th>
+            <th>Внести изменения</th>
         </tr>
-        {% for word1, word2 in dictionary.items %}
+        {% for word in dictionary %}
         <tr>
-            <td>{{word1}}</td>
-            <td>{{word2}}</td>
+            <td>{{ word.original }}</td>
+            <td>{{ word.translate }}</td>
+            <td>{{ word.comment }}</td>
+            <td><a href="https://context.reverso.net/перевод/английский-русский/{{ word.original }}">{{ word.original }}</a></td>
+            <td><a href={% url 'editing' word.id %}>Отредактировать</a></td>
         </tr>
         {% endfor %}
     </table>

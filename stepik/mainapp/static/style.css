@@ -1,0 +1,9 @@
+.words_list{
+    text-align: center;
+    border-collapse: collapse;
+}
+th, td{
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+tr:hover {background-color: coral;}

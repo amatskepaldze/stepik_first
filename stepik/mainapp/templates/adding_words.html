@@ -11,9 +11,11 @@
     <h2>Добавляйте</h2>
     <form method="POST" action="">
         <label for="original">Слово</label>
-        <input type="text" name="word1" required><br>
+        <input type="text" name="original" required><br>
         <label for="translate">Перевод</label>
-        <input type="text" name="word2" required><br>
+        <input type="text" name="translate" required><br>
+        <label for="comment">Комментарий</label>
+        <textarea name = "comment"></textarea>
         <input type="submit" value="Добавить">
         {% csrf_token %}
     </form>

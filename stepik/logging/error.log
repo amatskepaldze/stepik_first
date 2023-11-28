@@ -1826,3 +1826,272 @@ Traceback (most recent call last):
     raise MultiValueDictKeyError(key)
 django.utils.datastructures.MultiValueDictKeyError: 'word1'
 "POST /add_word/ HTTP/1.1" 500 73487
+Internal Server Error: /add_word/
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alexey\Documents\stepik_backend\stepik_first\stepik\mainapp\views.py", line 45, in adding_words_db
+    word = Dictionary.objects.filter(englsih='lift')
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 1421, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 1439, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 1446, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Python\lib\site-packages\django\db\models\sql\query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python\lib\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Python\lib\site-packages\django\db\models\sql\query.py", line 1407, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Python\lib\site-packages\django\db\models\sql\query.py", line 1217, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Python\lib\site-packages\django\db\models\sql\query.py", line 1709, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'englsih' into field. Choices are: comments, english, id, pushed_data, russian
+"POST /add_word/ HTTP/1.1" 500 107834
+Internal Server Error: /add_word/
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alexey\Documents\stepik_backend\stepik_first\stepik\mainapp\views.py", line 46, in adding_words_db
+    print(word.russian)
+AttributeError: 'QuerySet' object has no attribute 'russian'
+"POST /add_word/ HTTP/1.1" 500 65742
+Internal Server Error: /edit/1
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alexey\Documents\stepik_backend\stepik_first\stepik\mainapp\views.py", line 62, in edit_words_db
+    return render(request, 'editing.html', word)
+  File "C:\Python\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Python\lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Python\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Python\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Python\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Python\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Python\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Python\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Python\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Python\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Python\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Python\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python\lib\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Python\lib\site-packages\django\template\base.py", line 518, in parse
+    self.unclosed_block_tag(parse_until)
+  File "C:\Python\lib\site-packages\django\template\base.py", line 581, in unclosed_block_tag
+    raise self.error(token, msg)
+django.template.exceptions.TemplateSyntaxError: Unclosed tag on line 7: 'block'. Looking for one of: endblock.
+"GET /edit/1 HTTP/1.1" 500 156624
+Internal Server Error: /edit/1
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alexey\Documents\stepik_backend\stepik_first\stepik\mainapp\views.py", line 62, in edit_words_db
+    return render(request, 'editing.html', word)
+  File "C:\Python\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Python\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Python\lib\site-packages\django\template\backends\django.py", line 57, in render
+    context = make_context(
+  File "C:\Python\lib\site-packages\django\template\context.py", line 278, in make_context
+    raise TypeError(
+TypeError: context must be a dict rather than Dictionary.
+"GET /edit/1 HTTP/1.1" 500 80348
+Internal Server Error: /add_word/
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\db\backends\base\base.py", line 282, in ensure_connection
+    self.connect()
+  File "C:\Python\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\backends\base\base.py", line 263, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "C:\Python\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\backends\mysql\base.py", line 247, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "C:\Python\lib\site-packages\MySQLdb\__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "C:\Python\lib\site-packages\MySQLdb\connections.py", line 193, in __init__
+    super().__init__(*args, **kwargs2)
+MySQLdb.OperationalError: (2002, "Can't connect to server on 'localhost' (10061)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alexey\Documents\stepik_backend\stepik_first\stepik\mainapp\views.py", line 51, in adding_words_db
+    new_word.add_new_word(original, translate, comment)
+  File "C:\Users\Alexey\Documents\stepik_backend\stepik_first\stepik\mainapp\models.py", line 16, in add_new_word
+    self.save()
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 812, in save
+    self.save_base(
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 863, in save_base
+    updated = self._save_table(
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 1006, in _save_table
+    results = self._do_insert(
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 1047, in _do_insert
+    return manager._insert(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 1791, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1658, in execute_sql
+    with self.connection.cursor() as cursor:
+  File "C:\Python\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\backends\base\base.py", line 323, in cursor
+    return self._cursor()
+  File "C:\Python\lib\site-packages\django\db\backends\base\base.py", line 299, in _cursor
+    self.ensure_connection()
+  File "C:\Python\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\backends\base\base.py", line 282, in ensure_connection
+    self.connect()
+  File "C:\Python\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Python\lib\site-packages\django\db\backends\base\base.py", line 282, in ensure_connection
+    self.connect()
+  File "C:\Python\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\backends\base\base.py", line 263, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "C:\Python\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\backends\mysql\base.py", line 247, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "C:\Python\lib\site-packages\MySQLdb\__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "C:\Python\lib\site-packages\MySQLdb\connections.py", line 193, in __init__
+    super().__init__(*args, **kwargs2)
+django.db.utils.OperationalError: (2002, "Can't connect to server on 'localhost' (10061)")
+"POST /add_word/ HTTP/1.1" 500 230731
+Internal Server Error: /edit/3
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alexey\Documents\stepik_backend\stepik_first\stepik\mainapp\views.py", line 69, in edit_words_db
+    word.make_changes(data)
+TypeError: make_changes() takes 1 positional argument but 2 were given
+"POST /edit/3 HTTP/1.1" 500 65519
+Internal Server Error: /edit/3
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alexey\Documents\stepik_backend\stepik_first\stepik\mainapp\views.py", line 69, in edit_words_db
+    word.make_changes(dict(data))
+TypeError: make_changes() takes 1 positional argument but 2 were given
+"POST /edit/3 HTTP/1.1" 500 65537
+Internal Server Error: /edit/3
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alexey\Documents\stepik_backend\stepik_first\stepik\mainapp\views.py", line 69, in edit_words_db
+    word.make_changes(dict(data))
+TypeError: make_changes() takes 1 positional argument but 2 were given
+"POST /edit/3 HTTP/1.1" 500 65537
+Internal Server Error: /edit/3
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alexey\Documents\stepik_backend\stepik_first\stepik\mainapp\views.py", line 69, in edit_words_db
+    word.make_changes(dict(data))
+TypeError: make_changes() takes 1 positional argument but 2 were given
+"POST /edit/3 HTTP/1.1" 500 65537
+Internal Server Error: /edit/3
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alexey\Documents\stepik_backend\stepik_first\stepik\mainapp\views.py", line 69, in edit_words_db
+    word.make_changes(dict(data))
+TypeError: make_changes() takes 1 positional argument but 2 were given
+"POST /edit/3 HTTP/1.1" 500 65537
+Internal Server Error: /edit/3
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alexey\Documents\stepik_backend\stepik_first\stepik\mainapp\views.py", line 69, in edit_words_db
+    word.make_changes(dict(data))
+TypeError: make_changes() takes 1 positional argument but 2 were given
+"POST /edit/3 HTTP/1.1" 500 65551
+Internal Server Error: /edit/3
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alexey\Documents\stepik_backend\stepik_first\stepik\mainapp\views.py", line 69, in edit_words_db
+    word.make_changes(dict(data))
+  File "C:\Users\Alexey\Documents\stepik_backend\stepik_first\stepik\mainapp\models.py", line 20, in make_changes
+    print(self.key)
+AttributeError: 'Dictionary' object has no attribute 'key'
+"POST /edit/3 HTTP/1.1" 500 69555
+Internal Server Error: /edit/3
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alexey\Documents\stepik_backend\stepik_first\stepik\mainapp\views.py", line 69, in edit_words_db
+    word.make_changes(dict(data))
+  File "C:\Users\Alexey\Documents\stepik_backend\stepik_first\stepik\mainapp\models.py", line 20, in make_changes
+    print(self.key)
+AttributeError: 'Dictionary' object has no attribute 'key'
+"POST /edit/3 HTTP/1.1" 500 69730
+Internal Server Error: /edit/3
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alexey\Documents\stepik_backend\stepik_first\stepik\mainapp\views.py", line 69, in edit_words_db
+    word.make_changes(dict(data))
+  File "C:\Users\Alexey\Documents\stepik_backend\stepik_first\stepik\mainapp\models.py", line 20, in make_changes
+    print(self.key)
+AttributeError: 'Dictionary' object has no attribute 'key'
+"POST /edit/3 HTTP/1.1" 500 69730
